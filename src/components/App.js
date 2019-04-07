@@ -9,7 +9,7 @@ class App extends Component {
     }
     onSubmitForm = async (term) => {
    const response = await unsplash.get('/search/photos',{
-            params: {query: term}
+            params: {query: term,per_page: 20}
         })
         console.log(response)
         this.setState({ images: response.data.results})

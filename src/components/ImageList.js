@@ -1,17 +1,15 @@
 import React, {Component} from 'react';
-import ImageCompo from './ImageCompo';
+import ImageCard from './ImageCard';
 
 
 class ImageList extends Component {
    
     render(){
         const fullImages = this.props.images.map(image => {
-            return <div key={image.id} style={{float: 'left', width: '250px'}}>
-                    <ImageCompo image={image} />
-                    </div>
+            return  <ImageCard key={image.id} image={image} />       
         })
         return (
-            <div>
+            <div className="image-list">
                {fullImages}
             </div>
         );
